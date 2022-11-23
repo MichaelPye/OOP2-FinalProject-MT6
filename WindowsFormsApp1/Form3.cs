@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
-    public partial class ClientLoginForm : Form
+    public partial class ClientEticketQrCodeForm : Form
     {
-        public ClientLoginForm()
+        public ClientEticketQrCodeForm()
         {
             InitializeComponent();
         }
