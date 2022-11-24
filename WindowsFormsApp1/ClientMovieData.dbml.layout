@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="ClientMovieData">
+  <DataContextMoniker Name="/ClientMovieDataDataContext" />
+  <nestedChildShapes>
+    <classShape Id="49a4018e-bf38-48cb-9de9-125e89edabb1" absoluteBounds="3.5, 2, 2, 1.3862939453125">
+      <DataClassMoniker Name="/ClientMovieDataDataContext/ScreeningRoomInfo" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8908ca29-2566-42eb-9876-c8f7e51d189e" absoluteBounds="3.5149999999999997, 2.46, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b64d8376-a8ee-463e-9e8c-b88e25e3f525" absoluteBounds="1.25, 2.875, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/ClientMovieDataDataContext/ShowTimeInfo" />
+      <nestedChildShapes>
+        <elementListCompartment Id="778c9966-2d96-4c6e-bd21-2e3887bfa75b" absoluteBounds="1.2650000000000001, 3.335, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d2ac5e74-48b0-4611-af78-b5624f4635c5" absoluteBounds="1.25, 1.125, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/ClientMovieDataDataContext/Movy" />
+      <nestedChildShapes>
+        <elementListCompartment Id="102dffe2-0ce8-4c50-bbbc-772f1848473c" absoluteBounds="1.2650000000000001, 1.585, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

@@ -55,6 +55,7 @@
             this.ClientLoginButton.TabIndex = 1;
             this.ClientLoginButton.Text = "Login";
             this.ClientLoginButton.UseVisualStyleBackColor = true;
+            this.ClientLoginButton.Click += new System.EventHandler(this.ClientLoginButton_Click);
             // 
             // ClientManagerSwitchButton
             // 

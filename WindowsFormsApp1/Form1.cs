@@ -16,5 +16,11 @@ namespace WindowsFormsApp1
         {
             InitializeComponent();
         }
+
+        private void ClientLoginButton_Click(object sender, EventArgs e)
+        {
+            ClientMovieSelectionForm frm = new ClientMovieSelectionForm();
+            frm.Show();
+        }
     }
 }
