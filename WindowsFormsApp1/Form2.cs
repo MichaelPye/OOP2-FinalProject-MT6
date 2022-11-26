@@ -19,7 +19,8 @@ namespace WindowsFormsApp1
 
         private void ClientMovieSelectionButton_Click(object sender, EventArgs e)
         {
-
+            ClientEticketQrCodeForm frm = new ClientEticketQrCodeForm();
+            frm.Show();
         }
 
         private void ClientMovieSelectionForm_Load(object sender, EventArgs e)

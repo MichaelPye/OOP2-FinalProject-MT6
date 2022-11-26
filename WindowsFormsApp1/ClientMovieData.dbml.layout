@@ -20,5 +20,11 @@
         <elementListCompartment Id="102dffe2-0ce8-4c50-bbbc-772f1848473c" absoluteBounds="1.2650000000000001, 1.585, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
+    <classShape Id="506d384c-6e34-42fc-8f97-e261802aa3aa" absoluteBounds="5.75, 1.875, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/ClientMovieDataDataContext/User" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a670aa7e-3212-4454-a724-fcb33344f20c" absoluteBounds="5.765, 2.335, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
   </nestedChildShapes>
 </ordesignerObjectsDiagram>
