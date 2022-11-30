@@ -42,9 +42,9 @@ namespace WindowsFormsApp1 {
         
         private global::System.Data.DataRelation relationMovies_TicketInfo;
         
-        private global::System.Data.DataRelation relationUser_UserTicketInfoMovies;
-        
         private global::System.Data.DataRelation relationTicketInfo_UserTicketInfoMovies;
+        
+        private global::System.Data.DataRelation relationUser_UserTicketInfoMovies;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -327,8 +327,8 @@ namespace WindowsFormsApp1 {
             this.relationFK_Movies_ScreeningRoomInfo = this.Relations["FK_Movies_ScreeningRoomInfo"];
             this.relationFK_ScreeningRoomInfo_ShowTimeInfo = this.Relations["FK_ScreeningRoomInfo_ShowTimeInfo"];
             this.relationMovies_TicketInfo = this.Relations["Movies_TicketInfo"];
-            this.relationUser_UserTicketInfoMovies = this.Relations["User_UserTicketInfoMovies"];
             this.relationTicketInfo_UserTicketInfoMovies = this.Relations["TicketInfo_UserTicketInfoMovies"];
+            this.relationUser_UserTicketInfoMovies = this.Relations["User_UserTicketInfoMovies"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -373,16 +373,16 @@ namespace WindowsFormsApp1 {
             fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
             fkc.DeleteRule = global::System.Data.Rule.None;
             fkc.UpdateRule = global::System.Data.Rule.None;
-            fkc = new global::System.Data.ForeignKeyConstraint("User_UserTicketInfoMovies", new global::System.Data.DataColumn[] {
-                        this.tableUser.UserIDColumn}, new global::System.Data.DataColumn[] {
-                        this.tableUserTicketInfoMovies.UserIDColumn});
+            fkc = new global::System.Data.ForeignKeyConstraint("TicketInfo_UserTicketInfoMovies", new global::System.Data.DataColumn[] {
+                        this.tableTicketInfo.TicketIDColumn}, new global::System.Data.DataColumn[] {
+                        this.tableUserTicketInfoMovies.TicketIDColumn});
             this.tableUserTicketInfoMovies.Constraints.Add(fkc);
             fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
             fkc.DeleteRule = global::System.Data.Rule.None;
             fkc.UpdateRule = global::System.Data.Rule.None;
-            fkc = new global::System.Data.ForeignKeyConstraint("TicketInfo_UserTicketInfoMovies", new global::System.Data.DataColumn[] {
-                        this.tableTicketInfo.TicketIDColumn}, new global::System.Data.DataColumn[] {
-                        this.tableUserTicketInfoMovies.TicketIDColumn});
+            fkc = new global::System.Data.ForeignKeyConstraint("User_UserTicketInfoMovies", new global::System.Data.DataColumn[] {
+                        this.tableUser.UserIDColumn}, new global::System.Data.DataColumn[] {
+                        this.tableUserTicketInfoMovies.UserIDColumn});
             this.tableUserTicketInfoMovies.Constraints.Add(fkc);
             fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
             fkc.DeleteRule = global::System.Data.Rule.None;
@@ -399,14 +399,14 @@ namespace WindowsFormsApp1 {
                         this.tableMovies.MovieIDColumn}, new global::System.Data.DataColumn[] {
                         this.tableTicketInfo.MovieIDColumn}, false);
             this.Relations.Add(this.relationMovies_TicketInfo);
-            this.relationUser_UserTicketInfoMovies = new global::System.Data.DataRelation("User_UserTicketInfoMovies", new global::System.Data.DataColumn[] {
-                        this.tableUser.UserIDColumn}, new global::System.Data.DataColumn[] {
-                        this.tableUserTicketInfoMovies.UserIDColumn}, false);
-            this.Relations.Add(this.relationUser_UserTicketInfoMovies);
             this.relationTicketInfo_UserTicketInfoMovies = new global::System.Data.DataRelation("TicketInfo_UserTicketInfoMovies", new global::System.Data.DataColumn[] {
                         this.tableTicketInfo.TicketIDColumn}, new global::System.Data.DataColumn[] {
                         this.tableUserTicketInfoMovies.TicketIDColumn}, false);
             this.Relations.Add(this.relationTicketInfo_UserTicketInfoMovies);
+            this.relationUser_UserTicketInfoMovies = new global::System.Data.DataRelation("User_UserTicketInfoMovies", new global::System.Data.DataColumn[] {
+                        this.tableUser.UserIDColumn}, new global::System.Data.DataColumn[] {
+                        this.tableUserTicketInfoMovies.UserIDColumn}, false);
+            this.Relations.Add(this.relationUser_UserTicketInfoMovies);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2756,23 +2756,23 @@ namespace WindowsFormsApp1 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public UserRow UserRow {
-                get {
-                    return ((UserRow)(this.GetParentRow(this.Table.ParentRelations["User_UserTicketInfoMovies"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["User_UserTicketInfoMovies"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public TicketInfoRow TicketInfoRow {
                 get {
                     return ((TicketInfoRow)(this.GetParentRow(this.Table.ParentRelations["TicketInfo_UserTicketInfoMovies"])));
                 }
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["TicketInfo_UserTicketInfoMovies"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public UserRow UserRow {
+                get {
+                    return ((UserRow)(this.GetParentRow(this.Table.ParentRelations["User_UserTicketInfoMovies"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["User_UserTicketInfoMovies"]);
                 }
             }
         }
@@ -4482,25 +4482,33 @@ SELECT UserID, UserStatus, UserName, PassWord FROM [User] WHERE (UserID = @UserI
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[4];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT UserID, UserStatus, UserName, PassWord FROM dbo.[User]";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT UserName\r\nFROM dbo.[User]\r\nWHERE  UserName = @userName AND PassWord = @pas" +
-                "sWord";
+            this._commandCollection[1].CommandText = "INSERT INTO [dbo].[User] ([UserStatus], [UserName], [PassWord]) VALUES (\"Client\"," +
+                " @UserName, @PassWord);\r\nSELECT UserID, UserStatus, UserName, PassWord FROM [Use" +
+                "r] WHERE (UserID = SCOPE_IDENTITY())";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@userName", global::System.Data.SqlDbType.NVarChar, 25, global::System.Data.ParameterDirection.Input, 0, 0, "UserName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@passWord", global::System.Data.SqlDbType.NVarChar, 25, global::System.Data.ParameterDirection.Input, 0, 0, "PassWord", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UserName", global::System.Data.SqlDbType.NVarChar, 25, global::System.Data.ParameterDirection.Input, 0, 0, "UserName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PassWord", global::System.Data.SqlDbType.NVarChar, 25, global::System.Data.ParameterDirection.Input, 0, 0, "PassWord", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "SELECT PassWord\r\nFROM dbo.[User]\r\nWHERE  UserName = @userName AND PassWord = @pas" +
+            this._commandCollection[2].CommandText = "SELECT UserName\r\nFROM dbo.[User]\r\nWHERE  UserName = @userName AND PassWord = @pas" +
                 "sWord";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@userName", global::System.Data.SqlDbType.NVarChar, 25, global::System.Data.ParameterDirection.Input, 0, 0, "UserName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@passWord", global::System.Data.SqlDbType.NVarChar, 25, global::System.Data.ParameterDirection.Input, 0, 0, "PassWord", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[3].Connection = this.Connection;
+            this._commandCollection[3].CommandText = "SELECT PassWord\r\nFROM dbo.[User]\r\nWHERE  UserName = @userName AND PassWord = @pas" +
+                "sWord";
+            this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@userName", global::System.Data.SqlDbType.NVarChar, 25, global::System.Data.ParameterDirection.Input, 0, 0, "UserName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@passWord", global::System.Data.SqlDbType.NVarChar, 25, global::System.Data.ParameterDirection.Input, 0, 0, "PassWord", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4706,8 +4714,43 @@ SELECT UserID, UserStatus, UserName, PassWord FROM [User] WHERE (UserID = @UserI
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual object CheckNameQuery(string userName, string passWord) {
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
+        public virtual int AddClientQuery(string UserName, string PassWord) {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[1];
+            if ((UserName == null)) {
+                throw new global::System.ArgumentNullException("UserName");
+            }
+            else {
+                command.Parameters[0].Value = ((string)(UserName));
+            }
+            if ((PassWord == null)) {
+                throw new global::System.ArgumentNullException("PassWord");
+            }
+            else {
+                command.Parameters[1].Value = ((string)(PassWord));
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual object CheckNameQuery(string userName, string passWord) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[2];
             if ((userName == null)) {
                 throw new global::System.ArgumentNullException("userName");
             }
@@ -4747,7 +4790,7 @@ SELECT UserID, UserStatus, UserName, PassWord FROM [User] WHERE (UserID = @UserI
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual string CheckPasswordQuery(string userName, string passWord) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[2];
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[3];
             if ((userName == null)) {
                 throw new global::System.ArgumentNullException("userName");
             }

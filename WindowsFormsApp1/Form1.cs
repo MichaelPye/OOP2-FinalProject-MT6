@@ -32,29 +32,6 @@ namespace WindowsFormsApp1
             {
                 MessageBox.Show("The user name or password was incorrect");
             }
-
-            /*Use the userTableAdapter*/
-            /*if((bool)this.userTableAdapter.CheckQuery(this.ClientUserNameTextBox.Text,this.ClientPassWordTextBox.Text))
-            {
-                ClientMovieSelectionForm frm = new ClientMovieSelectionForm();
-                frm.Show();
-            } else
-            {
-                MessageBox.Show("The user name or password was incorrect");
-            }*/
-
-            /*foreach (User item in db.Users)
-            {
-                if(item.UserName == this.ClientUserNameTextBox.Text && item.PassWord == this.ClientPassWordTextBox.Text)
-                {
-                    ClientMovieSelectionForm frm = new ClientMovieSelectionForm();
-                    frm.Show();
-                }
-                else 
-                {
-                    MessageBox.Show("The user name or password was incorrect");
-                }
-            }*/
         }
 
         private void userBindingNavigatorSaveItem_Click(object sender, EventArgs e)
@@ -70,6 +47,12 @@ namespace WindowsFormsApp1
             // TODO: This line of code loads data into the 'dataSet1.User' table. You can move, or remove it, as needed.
             this.userTableAdapter.Fill(this.dataSet1.User);
 
+        }
+
+        private void NewUserButton_Click(object sender, EventArgs e)
+        {
+            RegisterForm registerTime = new RegisterForm();
+            registerTime.Show();
         }
     }
 }
