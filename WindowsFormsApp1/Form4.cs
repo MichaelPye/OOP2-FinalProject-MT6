@@ -32,6 +32,11 @@ namespace WindowsFormsApp1
 
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void RegisterButton_Click(object sender, EventArgs e)
         {
             this.userTableAdapter.AddClientQuery(this.RegisterUserNameTextBox.Text,this.RegisterPassWordTextBox.Text);

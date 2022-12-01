@@ -18,6 +18,12 @@ namespace WindowsFormsApp1
             InitializeComponent();
         }
 
+        /// <summary>
+        /// The method is call when the clientLoginButton is pressed, depending of the data in the two textboxes in the
+        /// form it will open ClienForm or ManagerForm calling the methods.
+        /// </summary>
+        /// <param name="sender">The button that was clicked</param>
+        /// <param name="e">Additional event argument</param>
         private void ClientLoginButton_Click(object sender, EventArgs e)
         {
             ClientMovieDataDataContext db = new ClientMovieDataDataContext();
@@ -49,6 +55,12 @@ namespace WindowsFormsApp1
 
         }
 
+        /// <summary>
+        /// This method is call after pressing the registerButton, it opens the RegisterForm to make new users into the
+        /// table 'User'.
+        /// </summary>
+        /// <param name="sender">The button that was clicked</param>
+        /// <param name="e">Additional event argument</param>
         private void NewUserButton_Click(object sender, EventArgs e)
         {
             RegisterForm registerTime = new RegisterForm();
