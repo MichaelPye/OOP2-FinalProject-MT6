@@ -22,9 +22,9 @@ namespace WindowsFormsApp1
         {
             ClientMovieDataDataContext db = new ClientMovieDataDataContext();
 
-            string userName = (string)this.userTableAdapter.CheckNameQuery(this.ClientUserNameTextBox.Text, this.ClientPassWordTextBox.Text);
-            string userPassword = (string)this.userTableAdapter.CheckPasswordQuery(this.ClientUserNameTextBox.Text, this.ClientPassWordTextBox.Text);
-            if (userName == this.ClientUserNameTextBox.Text && userPassword == this.ClientPassWordTextBox.Text)
+            int userName = (int)this.userTableAdapter.CheckNameQuery(this.ClientUserNameTextBox.Text, this.ClientPassWordTextBox.Text);
+            int userPassword = (int)this.userTableAdapter.CheckPasswordQuery(this.ClientUserNameTextBox.Text, this.ClientPassWordTextBox.Text);
+            if (userName == 1 && userPassword == 1)
             {
                 ClientMovieSelectionForm frm = new ClientMovieSelectionForm();
                 frm.Show();

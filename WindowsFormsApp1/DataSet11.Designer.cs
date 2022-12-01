@@ -4497,14 +4497,14 @@ SELECT UserID, UserStatus, UserName, PassWord FROM [User] WHERE (UserID = @UserI
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PassWord", global::System.Data.SqlDbType.NVarChar, 25, global::System.Data.ParameterDirection.Input, 0, 0, "PassWord", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "SELECT COUNT(*)\r\nFROM dbo.[User]\r\nWHERE  UserName = @userName AND PassWord = @pas" +
+            this._commandCollection[2].CommandText = "SELECT UserName\r\nFROM dbo.[User]\r\nWHERE  UserName = @userName AND PassWord = @pas" +
                 "sWord";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@userName", global::System.Data.SqlDbType.NVarChar, 25, global::System.Data.ParameterDirection.Input, 0, 0, "UserName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@passWord", global::System.Data.SqlDbType.NVarChar, 25, global::System.Data.ParameterDirection.Input, 0, 0, "PassWord", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[3].Connection = this.Connection;
-            this._commandCollection[3].CommandText = "SELECT COUNT(*)\r\nFROM dbo.[User]\r\nWHERE  UserName = @userName AND PassWord = @pas" +
+            this._commandCollection[3].CommandText = "SELECT PassWord\r\nFROM dbo.[User]\r\nWHERE  UserName = @userName AND PassWord = @pas" +
                 "sWord";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@userName", global::System.Data.SqlDbType.NVarChar, 25, global::System.Data.ParameterDirection.Input, 0, 0, "UserName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
