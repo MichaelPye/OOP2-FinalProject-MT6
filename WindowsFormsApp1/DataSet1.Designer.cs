@@ -4489,7 +4489,7 @@ SELECT UserID, UserStatus, UserName, PassWord FROM [User] WHERE (UserID = @UserI
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "INSERT INTO [dbo].[User] ([UserStatus], [UserName], [PassWord]) VALUES (\"Client\"," +
+            this._commandCollection[1].CommandText = "INSERT INTO [dbo].[User] ([UserStatus], [UserName], [PassWord]) VALUES (\'Client\'," +
                 " @UserName, @PassWord);\r\nSELECT UserID, UserStatus, UserName, PassWord FROM [Use" +
                 "r] WHERE (UserID = SCOPE_IDENTITY())";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
