@@ -33,10 +33,11 @@ namespace WindowsFormsApp1
         }
 
         /// <summary>
-        /// 
+        /// This method is call when the registerButton is clicked, it open a method(SQL) from the DataSet1 to insert the
+        /// data in the text boxes as new users in the UserTable.
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender">The button that was clicked</param>
+        /// <param name="e">Additional event argument</param>
         private void RegisterButton_Click(object sender, EventArgs e)
         {
             this.userTableAdapter.AddClientQuery(this.RegisterUserNameTextBox.Text,this.RegisterPassWordTextBox.Text);
