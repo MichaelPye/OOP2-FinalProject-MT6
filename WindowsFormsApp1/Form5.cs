@@ -22,5 +22,11 @@ namespace WindowsFormsApp1
             MovieListForm movieList = new MovieListForm();
             movieList.Show();
         }
+
+        private void ManagerSettingsClientButton_Click(object sender, EventArgs e)
+        {
+            ClientListForm clientList = new ClientListForm();
+            clientList.Show();
+        }
     }
 }

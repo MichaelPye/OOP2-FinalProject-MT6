@@ -67,7 +67,7 @@ namespace WindowsFormsApp1
             if (this.nameTextBox.Text == "")
             {
                 MessageBox.Show("Please, put a movie or finish edit task");
-            } else if(this.genreComboBox.Text == "")
+            } else if (this.genreComboBox.Text == "")
             {
                 MessageBox.Show("Please, select a genre or finish edit task");
             } else
@@ -109,11 +109,17 @@ namespace WindowsFormsApp1
 
         private void deleteButton_Click(object sender, EventArgs e)
         {
-            int movieID = int.Parse(listView1.SelectedItems[0].Text);
+            if (this.listView1.SelectedItems.Count < 1)
+            {
+                MessageBox.Show("Select a column or end the task");
+            } else
+            {
+                int movieID = int.Parse(listView1.SelectedItems[0].Text);
 
-            this.moviesTableAdapter1.DeleteSelectedItemQuery(movieID);
+                this.moviesTableAdapter1.DeleteSelectedItemQuery(movieID);
 
-            this.listView1.SelectedItems[0].Remove();
+                this.listView1.SelectedItems[0].Remove();
+            }
         }
     }
 }

@@ -72,6 +72,7 @@
             this.ManagerSettingsClientButton.TabIndex = 3;
             this.ManagerSettingsClientButton.Text = "Clients";
             this.ManagerSettingsClientButton.UseVisualStyleBackColor = true;
+            this.ManagerSettingsClientButton.Click += new System.EventHandler(this.ManagerSettingsClientButton_Click);
             // 
             // ManagerSettingsScreeningRoomsButton
             // 
