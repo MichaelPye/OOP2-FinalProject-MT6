@@ -42,9 +42,10 @@
             // 
             // ClientMovieSelectionButton
             // 
-            this.ClientMovieSelectionButton.Location = new System.Drawing.Point(162, 175);
+            this.ClientMovieSelectionButton.Location = new System.Drawing.Point(209, 215);
+            this.ClientMovieSelectionButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ClientMovieSelectionButton.Name = "ClientMovieSelectionButton";
-            this.ClientMovieSelectionButton.Size = new System.Drawing.Size(101, 23);
+            this.ClientMovieSelectionButton.Size = new System.Drawing.Size(135, 28);
             this.ClientMovieSelectionButton.TabIndex = 2;
             this.ClientMovieSelectionButton.Text = "Get Your E-Ticket";
             this.ClientMovieSelectionButton.UseVisualStyleBackColor = true;
@@ -54,51 +55,61 @@
             // 
             this.ClientMovieSelectionLabel.AutoSize = true;
             this.ClientMovieSelectionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ClientMovieSelectionLabel.Location = new System.Drawing.Point(89, 9);
+            this.ClientMovieSelectionLabel.Location = new System.Drawing.Point(137, 9);
+            this.ClientMovieSelectionLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ClientMovieSelectionLabel.Name = "ClientMovieSelectionLabel";
-            this.ClientMovieSelectionLabel.Size = new System.Drawing.Size(234, 16);
+            this.ClientMovieSelectionLabel.Size = new System.Drawing.Size(288, 20);
             this.ClientMovieSelectionLabel.TabIndex = 3;
             this.ClientMovieSelectionLabel.Text = "Here\'s What\'s Playing Right Now";
             // 
             // ClientMovieListBox
             // 
             this.ClientMovieListBox.FormattingEnabled = true;
-            this.ClientMovieListBox.Location = new System.Drawing.Point(12, 61);
+            this.ClientMovieListBox.ItemHeight = 16;
+            this.ClientMovieListBox.Location = new System.Drawing.Point(16, 75);
+            this.ClientMovieListBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ClientMovieListBox.Name = "ClientMovieListBox";
-            this.ClientMovieListBox.Size = new System.Drawing.Size(120, 108);
+            this.ClientMovieListBox.Size = new System.Drawing.Size(159, 132);
             this.ClientMovieListBox.TabIndex = 4;
             // 
             // ClientShowTimeListBox
             // 
             this.ClientShowTimeListBox.FormattingEnabled = true;
-            this.ClientShowTimeListBox.Location = new System.Drawing.Point(248, 61);
+            this.ClientShowTimeListBox.ItemHeight = 16;
+            this.ClientShowTimeListBox.Location = new System.Drawing.Point(331, 75);
+            this.ClientShowTimeListBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ClientShowTimeListBox.Name = "ClientShowTimeListBox";
-            this.ClientShowTimeListBox.Size = new System.Drawing.Size(120, 108);
+            this.ClientShowTimeListBox.Size = new System.Drawing.Size(159, 132);
             this.ClientShowTimeListBox.TabIndex = 5;
             // 
             // ClientIdListBox
             // 
             this.ClientIdListBox.FormattingEnabled = true;
-            this.ClientIdListBox.Location = new System.Drawing.Point(374, 61);
+            this.ClientIdListBox.ItemHeight = 16;
+            this.ClientIdListBox.Location = new System.Drawing.Point(499, 75);
+            this.ClientIdListBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ClientIdListBox.Name = "ClientIdListBox";
-            this.ClientIdListBox.Size = new System.Drawing.Size(28, 108);
+            this.ClientIdListBox.Size = new System.Drawing.Size(36, 132);
             this.ClientIdListBox.TabIndex = 6;
             // 
             // ClientGenreListBox
             // 
             this.ClientGenreListBox.FormattingEnabled = true;
-            this.ClientGenreListBox.Location = new System.Drawing.Point(138, 61);
+            this.ClientGenreListBox.ItemHeight = 16;
+            this.ClientGenreListBox.Location = new System.Drawing.Point(184, 75);
+            this.ClientGenreListBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ClientGenreListBox.Name = "ClientGenreListBox";
-            this.ClientGenreListBox.Size = new System.Drawing.Size(104, 108);
+            this.ClientGenreListBox.Size = new System.Drawing.Size(137, 132);
             this.ClientGenreListBox.TabIndex = 7;
             // 
             // ClientMovieLabel
             // 
             this.ClientMovieLabel.AutoSize = true;
             this.ClientMovieLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ClientMovieLabel.Location = new System.Drawing.Point(25, 45);
+            this.ClientMovieLabel.Location = new System.Drawing.Point(33, 55);
+            this.ClientMovieLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ClientMovieLabel.Name = "ClientMovieLabel";
-            this.ClientMovieLabel.Size = new System.Drawing.Size(92, 13);
+            this.ClientMovieLabel.Size = new System.Drawing.Size(117, 17);
             this.ClientMovieLabel.TabIndex = 8;
             this.ClientMovieLabel.Text = "Current Movies";
             // 
@@ -106,9 +117,10 @@
             // 
             this.ClientGenreLabel.AutoSize = true;
             this.ClientGenreLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ClientGenreLabel.Location = new System.Drawing.Point(171, 45);
+            this.ClientGenreLabel.Location = new System.Drawing.Point(228, 55);
+            this.ClientGenreLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ClientGenreLabel.Name = "ClientGenreLabel";
-            this.ClientGenreLabel.Size = new System.Drawing.Size(41, 13);
+            this.ClientGenreLabel.Size = new System.Drawing.Size(53, 17);
             this.ClientGenreLabel.TabIndex = 9;
             this.ClientGenreLabel.Text = "Genre";
             // 
@@ -116,9 +128,10 @@
             // 
             this.ClientShowTimeLabel.AutoSize = true;
             this.ClientShowTimeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ClientShowTimeLabel.Location = new System.Drawing.Point(278, 45);
+            this.ClientShowTimeLabel.Location = new System.Drawing.Point(371, 55);
+            this.ClientShowTimeLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ClientShowTimeLabel.Name = "ClientShowTimeLabel";
-            this.ClientShowTimeLabel.Size = new System.Drawing.Size(61, 13);
+            this.ClientShowTimeLabel.Size = new System.Drawing.Size(76, 17);
             this.ClientShowTimeLabel.TabIndex = 10;
             this.ClientShowTimeLabel.Text = "Showtime";
             // 
@@ -126,17 +139,18 @@
             // 
             this.ClientIdLabel.AutoSize = true;
             this.ClientIdLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ClientIdLabel.Location = new System.Drawing.Point(371, 45);
+            this.ClientIdLabel.Location = new System.Drawing.Point(495, 55);
+            this.ClientIdLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ClientIdLabel.Name = "ClientIdLabel";
-            this.ClientIdLabel.Size = new System.Drawing.Size(20, 13);
+            this.ClientIdLabel.Size = new System.Drawing.Size(23, 17);
             this.ClientIdLabel.TabIndex = 11;
             this.ClientIdLabel.Text = "ID";
             // 
             // ClientMovieSelectionForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(414, 210);
+            this.ClientSize = new System.Drawing.Size(552, 258);
             this.Controls.Add(this.ClientIdLabel);
             this.Controls.Add(this.ClientShowTimeLabel);
             this.Controls.Add(this.ClientGenreLabel);
@@ -147,6 +161,7 @@
             this.Controls.Add(this.ClientMovieListBox);
             this.Controls.Add(this.ClientMovieSelectionLabel);
             this.Controls.Add(this.ClientMovieSelectionButton);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "ClientMovieSelectionForm";
             this.Text = "Select Your Movie";
             this.Load += new System.EventHandler(this.ClientMovieSelectionForm_Load);

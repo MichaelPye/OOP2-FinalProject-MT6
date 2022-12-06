@@ -48,16 +48,16 @@
             // 
             this.titleLabel.AutoSize = true;
             this.titleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.titleLabel.Location = new System.Drawing.Point(34, 39);
+            this.titleLabel.Location = new System.Drawing.Point(80, 42);
             this.titleLabel.Name = "titleLabel";
-            this.titleLabel.Size = new System.Drawing.Size(187, 18);
+            this.titleLabel.Size = new System.Drawing.Size(148, 18);
             this.titleLabel.TabIndex = 0;
-            this.titleLabel.Text = "Put the next information";
+            this.titleLabel.Text = "Add New User Info";
             // 
             // addULabel
             // 
             this.addULabel.AutoSize = true;
-            this.addULabel.Location = new System.Drawing.Point(57, 114);
+            this.addULabel.Location = new System.Drawing.Point(22, 111);
             this.addULabel.Name = "addULabel";
             this.addULabel.Size = new System.Drawing.Size(101, 16);
             this.addULabel.TabIndex = 1;
@@ -66,7 +66,7 @@
             // addPLabel
             // 
             this.addPLabel.AutoSize = true;
-            this.addPLabel.Location = new System.Drawing.Point(60, 165);
+            this.addPLabel.Location = new System.Drawing.Point(22, 162);
             this.addPLabel.Name = "addPLabel";
             this.addPLabel.Size = new System.Drawing.Size(98, 16);
             this.addPLabel.TabIndex = 2;
@@ -74,21 +74,21 @@
             // 
             // theUserTextBox
             // 
-            this.theUserTextBox.Location = new System.Drawing.Point(164, 111);
+            this.theUserTextBox.Location = new System.Drawing.Point(129, 105);
             this.theUserTextBox.Name = "theUserTextBox";
             this.theUserTextBox.Size = new System.Drawing.Size(131, 22);
             this.theUserTextBox.TabIndex = 3;
             // 
             // thePasswordTextBox
             // 
-            this.thePasswordTextBox.Location = new System.Drawing.Point(164, 162);
+            this.thePasswordTextBox.Location = new System.Drawing.Point(126, 156);
             this.thePasswordTextBox.Name = "thePasswordTextBox";
-            this.thePasswordTextBox.Size = new System.Drawing.Size(131, 22);
+            this.thePasswordTextBox.Size = new System.Drawing.Size(134, 22);
             this.thePasswordTextBox.TabIndex = 4;
             // 
             // theRegisterButton
             // 
-            this.theRegisterButton.Location = new System.Drawing.Point(73, 235);
+            this.theRegisterButton.Location = new System.Drawing.Point(32, 235);
             this.theRegisterButton.Name = "theRegisterButton";
             this.theRegisterButton.Size = new System.Drawing.Size(91, 32);
             this.theRegisterButton.TabIndex = 5;
@@ -98,7 +98,7 @@
             // 
             // theCancelButton
             // 
-            this.theCancelButton.Location = new System.Drawing.Point(186, 235);
+            this.theCancelButton.Location = new System.Drawing.Point(164, 235);
             this.theCancelButton.Name = "theCancelButton";
             this.theCancelButton.Size = new System.Drawing.Size(91, 32);
             this.theCancelButton.TabIndex = 6;
@@ -133,7 +133,7 @@
             // 
             // RegisterForm
             // 
-            this.ClientSize = new System.Drawing.Size(372, 340);
+            this.ClientSize = new System.Drawing.Size(318, 281);
             this.Controls.Add(this.theCancelButton);
             this.Controls.Add(this.theRegisterButton);
             this.Controls.Add(this.thePasswordTextBox);

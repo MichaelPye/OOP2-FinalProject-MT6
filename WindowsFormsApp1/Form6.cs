@@ -20,8 +20,6 @@ namespace WindowsFormsApp1
         SqlDataAdapter da;
         DataSet ds;
 
-        int movieID = 2;
-
         public MovieListForm()
         {
             InitializeComponent();

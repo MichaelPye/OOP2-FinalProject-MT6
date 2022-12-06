@@ -40,7 +40,7 @@
             // 
             this.ClientThankYouLabel.AutoSize = true;
             this.ClientThankYouLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ClientThankYouLabel.Location = new System.Drawing.Point(132, 25);
+            this.ClientThankYouLabel.Location = new System.Drawing.Point(147, 26);
             this.ClientThankYouLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ClientThankYouLabel.Name = "ClientThankYouLabel";
             this.ClientThankYouLabel.Size = new System.Drawing.Size(213, 18);
@@ -53,7 +53,7 @@
             this.ClientQrCodePictureBox.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.ClientQrCodePictureBox.Image = ((System.Drawing.Image)(resources.GetObject("ClientQrCodePictureBox.Image")));
             this.ClientQrCodePictureBox.Location = new System.Drawing.Point(111, 79);
-            this.ClientQrCodePictureBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ClientQrCodePictureBox.Margin = new System.Windows.Forms.Padding(4);
             this.ClientQrCodePictureBox.Name = "ClientQrCodePictureBox";
             this.ClientQrCodePictureBox.Size = new System.Drawing.Size(287, 250);
             this.ClientQrCodePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -64,7 +64,7 @@
             // 
             this.ClientQrCodeVerifyLabel.AutoSize = true;
             this.ClientQrCodeVerifyLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ClientQrCodeVerifyLabel.Location = new System.Drawing.Point(17, 354);
+            this.ClientQrCodeVerifyLabel.Location = new System.Drawing.Point(37, 354);
             this.ClientQrCodeVerifyLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ClientQrCodeVerifyLabel.Name = "ClientQrCodeVerifyLabel";
             this.ClientQrCodeVerifyLabel.Size = new System.Drawing.Size(430, 24);
@@ -73,8 +73,8 @@
             // 
             // ClientQrCodeCloseButton
             // 
-            this.ClientQrCodeCloseButton.Location = new System.Drawing.Point(196, 393);
-            this.ClientQrCodeCloseButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ClientQrCodeCloseButton.Location = new System.Drawing.Point(203, 395);
+            this.ClientQrCodeCloseButton.Margin = new System.Windows.Forms.Padding(4);
             this.ClientQrCodeCloseButton.Name = "ClientQrCodeCloseButton";
             this.ClientQrCodeCloseButton.Size = new System.Drawing.Size(100, 28);
             this.ClientQrCodeCloseButton.TabIndex = 3;
@@ -91,7 +91,7 @@
             this.Controls.Add(this.ClientQrCodeVerifyLabel);
             this.Controls.Add(this.ClientQrCodePictureBox);
             this.Controls.Add(this.ClientThankYouLabel);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ClientEticketQrCodeForm";
             this.Text = "Thank You!";
             ((System.ComponentModel.ISupportInitialize)(this.ClientQrCodePictureBox)).EndInit();

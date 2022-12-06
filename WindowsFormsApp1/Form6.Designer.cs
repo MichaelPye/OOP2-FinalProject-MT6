@@ -158,7 +158,7 @@
             // 
             // closeButton
             // 
-            this.closeButton.Location = new System.Drawing.Point(345, 411);
+            this.closeButton.Location = new System.Drawing.Point(345, 402);
             this.closeButton.Name = "closeButton";
             this.closeButton.Size = new System.Drawing.Size(99, 39);
             this.closeButton.TabIndex = 18;
