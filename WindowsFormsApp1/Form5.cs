@@ -16,5 +16,11 @@ namespace WindowsFormsApp1
         {
             InitializeComponent();
         }
+
+        private void movieButton_Click(object sender, EventArgs e)
+        {
+            MovieListForm movieList = new MovieListForm();
+            movieList.Show();
+        }
     }
 }

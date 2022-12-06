@@ -20,9 +20,9 @@ namespace WindowsFormsApp1 {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("DataSet1")]
+    [global::System.Xml.Serialization.XmlRootAttribute("MTDBTESTDataSet")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class DataSet1 : global::System.Data.DataSet {
+    public partial class MTDBTESTDataSet : global::System.Data.DataSet {
         
         private MoviesDataTable tableMovies;
         
@@ -40,17 +40,17 @@ namespace WindowsFormsApp1 {
         
         private global::System.Data.DataRelation relationFK_ScreeningRoomInfo_ShowTimeInfo;
         
-        private global::System.Data.DataRelation relationMovies_TicketInfo;
+        private global::System.Data.DataRelation relationFK_Movies_TicketInfo;
         
-        private global::System.Data.DataRelation relationUser_UserTicketInfoMovies;
+        private global::System.Data.DataRelation relationFK_TicketInfo_UserTicketInfoMovies;
         
-        private global::System.Data.DataRelation relationTicketInfo_UserTicketInfoMovies;
+        private global::System.Data.DataRelation relationFK_User_UserTicketInfoMovies;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public DataSet1() {
+        public MTDBTESTDataSet() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -61,7 +61,7 @@ namespace WindowsFormsApp1 {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        protected DataSet1(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected MTDBTESTDataSet(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -212,7 +212,7 @@ namespace WindowsFormsApp1 {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            DataSet1 cln = ((DataSet1)(base.Clone()));
+            MTDBTESTDataSet cln = ((MTDBTESTDataSet)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -326,17 +326,17 @@ namespace WindowsFormsApp1 {
             }
             this.relationFK_Movies_ScreeningRoomInfo = this.Relations["FK_Movies_ScreeningRoomInfo"];
             this.relationFK_ScreeningRoomInfo_ShowTimeInfo = this.Relations["FK_ScreeningRoomInfo_ShowTimeInfo"];
-            this.relationMovies_TicketInfo = this.Relations["Movies_TicketInfo"];
-            this.relationUser_UserTicketInfoMovies = this.Relations["User_UserTicketInfoMovies"];
-            this.relationTicketInfo_UserTicketInfoMovies = this.Relations["TicketInfo_UserTicketInfoMovies"];
+            this.relationFK_Movies_TicketInfo = this.Relations["FK_Movies_TicketInfo"];
+            this.relationFK_TicketInfo_UserTicketInfoMovies = this.Relations["FK_TicketInfo_UserTicketInfoMovies"];
+            this.relationFK_User_UserTicketInfoMovies = this.Relations["FK_User_UserTicketInfoMovies"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "DataSet1";
+            this.DataSetName = "MTDBTESTDataSet";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/DataSet1.xsd";
+            this.Namespace = "http://tempuri.org/MTDBTESTDataSet.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
             this.tableMovies = new MoviesDataTable();
@@ -366,27 +366,27 @@ namespace WindowsFormsApp1 {
             fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
             fkc.DeleteRule = global::System.Data.Rule.Cascade;
             fkc.UpdateRule = global::System.Data.Rule.Cascade;
-            fkc = new global::System.Data.ForeignKeyConstraint("Movies_TicketInfo", new global::System.Data.DataColumn[] {
+            fkc = new global::System.Data.ForeignKeyConstraint("FK_Movies_TicketInfo", new global::System.Data.DataColumn[] {
                         this.tableMovies.MovieIDColumn}, new global::System.Data.DataColumn[] {
                         this.tableTicketInfo.MovieIDColumn});
             this.tableTicketInfo.Constraints.Add(fkc);
             fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
-            fkc.DeleteRule = global::System.Data.Rule.None;
-            fkc.UpdateRule = global::System.Data.Rule.None;
-            fkc = new global::System.Data.ForeignKeyConstraint("User_UserTicketInfoMovies", new global::System.Data.DataColumn[] {
-                        this.tableUser.UserIDColumn}, new global::System.Data.DataColumn[] {
-                        this.tableUserTicketInfoMovies.UserIDColumn});
-            this.tableUserTicketInfoMovies.Constraints.Add(fkc);
-            fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
-            fkc.DeleteRule = global::System.Data.Rule.None;
-            fkc.UpdateRule = global::System.Data.Rule.None;
-            fkc = new global::System.Data.ForeignKeyConstraint("TicketInfo_UserTicketInfoMovies", new global::System.Data.DataColumn[] {
+            fkc.DeleteRule = global::System.Data.Rule.Cascade;
+            fkc.UpdateRule = global::System.Data.Rule.Cascade;
+            fkc = new global::System.Data.ForeignKeyConstraint("FK_TicketInfo_UserTicketInfoMovies", new global::System.Data.DataColumn[] {
                         this.tableTicketInfo.TicketIDColumn}, new global::System.Data.DataColumn[] {
                         this.tableUserTicketInfoMovies.TicketIDColumn});
             this.tableUserTicketInfoMovies.Constraints.Add(fkc);
             fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
-            fkc.DeleteRule = global::System.Data.Rule.None;
-            fkc.UpdateRule = global::System.Data.Rule.None;
+            fkc.DeleteRule = global::System.Data.Rule.Cascade;
+            fkc.UpdateRule = global::System.Data.Rule.Cascade;
+            fkc = new global::System.Data.ForeignKeyConstraint("FK_User_UserTicketInfoMovies", new global::System.Data.DataColumn[] {
+                        this.tableUser.UserIDColumn}, new global::System.Data.DataColumn[] {
+                        this.tableUserTicketInfoMovies.UserIDColumn});
+            this.tableUserTicketInfoMovies.Constraints.Add(fkc);
+            fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
+            fkc.DeleteRule = global::System.Data.Rule.Cascade;
+            fkc.UpdateRule = global::System.Data.Rule.Cascade;
             this.relationFK_Movies_ScreeningRoomInfo = new global::System.Data.DataRelation("FK_Movies_ScreeningRoomInfo", new global::System.Data.DataColumn[] {
                         this.tableMovies.MovieIDColumn}, new global::System.Data.DataColumn[] {
                         this.tableScreeningRoomInfo.MovieIDColumn}, false);
@@ -395,18 +395,18 @@ namespace WindowsFormsApp1 {
                         this.tableScreeningRoomInfo.ScreeningRoomIDColumn}, new global::System.Data.DataColumn[] {
                         this.tableShowTimeInfo.ScreeningRoomIDColumn}, false);
             this.Relations.Add(this.relationFK_ScreeningRoomInfo_ShowTimeInfo);
-            this.relationMovies_TicketInfo = new global::System.Data.DataRelation("Movies_TicketInfo", new global::System.Data.DataColumn[] {
+            this.relationFK_Movies_TicketInfo = new global::System.Data.DataRelation("FK_Movies_TicketInfo", new global::System.Data.DataColumn[] {
                         this.tableMovies.MovieIDColumn}, new global::System.Data.DataColumn[] {
                         this.tableTicketInfo.MovieIDColumn}, false);
-            this.Relations.Add(this.relationMovies_TicketInfo);
-            this.relationUser_UserTicketInfoMovies = new global::System.Data.DataRelation("User_UserTicketInfoMovies", new global::System.Data.DataColumn[] {
-                        this.tableUser.UserIDColumn}, new global::System.Data.DataColumn[] {
-                        this.tableUserTicketInfoMovies.UserIDColumn}, false);
-            this.Relations.Add(this.relationUser_UserTicketInfoMovies);
-            this.relationTicketInfo_UserTicketInfoMovies = new global::System.Data.DataRelation("TicketInfo_UserTicketInfoMovies", new global::System.Data.DataColumn[] {
+            this.Relations.Add(this.relationFK_Movies_TicketInfo);
+            this.relationFK_TicketInfo_UserTicketInfoMovies = new global::System.Data.DataRelation("FK_TicketInfo_UserTicketInfoMovies", new global::System.Data.DataColumn[] {
                         this.tableTicketInfo.TicketIDColumn}, new global::System.Data.DataColumn[] {
                         this.tableUserTicketInfoMovies.TicketIDColumn}, false);
-            this.Relations.Add(this.relationTicketInfo_UserTicketInfoMovies);
+            this.Relations.Add(this.relationFK_TicketInfo_UserTicketInfoMovies);
+            this.relationFK_User_UserTicketInfoMovies = new global::System.Data.DataRelation("FK_User_UserTicketInfoMovies", new global::System.Data.DataColumn[] {
+                        this.tableUser.UserIDColumn}, new global::System.Data.DataColumn[] {
+                        this.tableUserTicketInfoMovies.UserIDColumn}, false);
+            this.Relations.Add(this.relationFK_User_UserTicketInfoMovies);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -456,7 +456,7 @@ namespace WindowsFormsApp1 {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            DataSet1 ds = new DataSet1();
+            MTDBTESTDataSet ds = new MTDBTESTDataSet();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -763,7 +763,7 @@ namespace WindowsFormsApp1 {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                DataSet1 ds = new DataSet1();
+                MTDBTESTDataSet ds = new MTDBTESTDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -1054,7 +1054,7 @@ namespace WindowsFormsApp1 {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                DataSet1 ds = new DataSet1();
+                MTDBTESTDataSet ds = new MTDBTESTDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -1359,7 +1359,7 @@ namespace WindowsFormsApp1 {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                DataSet1 ds = new DataSet1();
+                MTDBTESTDataSet ds = new MTDBTESTDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -1525,14 +1525,14 @@ namespace WindowsFormsApp1 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public TicketInfoRow AddTicketInfoRow(MoviesRow parentMoviesRowByMovies_TicketInfo, int TicketID, System.DateTime PurachseDate) {
+            public TicketInfoRow AddTicketInfoRow(MoviesRow parentMoviesRowByFK_Movies_TicketInfo, int TicketID, System.DateTime PurachseDate) {
                 TicketInfoRow rowTicketInfoRow = ((TicketInfoRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         TicketID,
                         PurachseDate};
-                if ((parentMoviesRowByMovies_TicketInfo != null)) {
-                    columnValuesArray[0] = parentMoviesRowByMovies_TicketInfo[1];
+                if ((parentMoviesRowByFK_Movies_TicketInfo != null)) {
+                    columnValuesArray[0] = parentMoviesRowByFK_Movies_TicketInfo[1];
                 }
                 rowTicketInfoRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowTicketInfoRow);
@@ -1650,7 +1650,7 @@ namespace WindowsFormsApp1 {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                DataSet1 ds = new DataSet1();
+                MTDBTESTDataSet ds = new MTDBTESTDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -1826,10 +1826,10 @@ namespace WindowsFormsApp1 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public UserRow AddUserRow(int UserID, string UserStatus, string UserName, string PassWord) {
+            public UserRow AddUserRow(string UserStatus, string UserName, string PassWord) {
                 UserRow rowUserRow = ((UserRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        UserID,
+                        null,
                         UserStatus,
                         UserName,
                         PassWord};
@@ -1881,7 +1881,11 @@ namespace WindowsFormsApp1 {
                 base.Columns.Add(this.columnPassWord);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnUserID}, true));
+                this.columnUserID.AutoIncrement = true;
+                this.columnUserID.AutoIncrementSeed = -1;
+                this.columnUserID.AutoIncrementStep = -1;
                 this.columnUserID.AllowDBNull = false;
+                this.columnUserID.ReadOnly = true;
                 this.columnUserID.Unique = true;
                 this.columnUserStatus.AllowDBNull = false;
                 this.columnUserStatus.MaxLength = 15;
@@ -1956,7 +1960,7 @@ namespace WindowsFormsApp1 {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                DataSet1 ds = new DataSet1();
+                MTDBTESTDataSet ds = new MTDBTESTDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -2122,17 +2126,17 @@ namespace WindowsFormsApp1 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public UserTicketInfoMoviesRow AddUserTicketInfoMoviesRow(UserRow parentUserRowByUser_UserTicketInfoMovies, TicketInfoRow parentTicketInfoRowByTicketInfo_UserTicketInfoMovies, int MovieID) {
+            public UserTicketInfoMoviesRow AddUserTicketInfoMoviesRow(UserRow parentUserRowByFK_User_UserTicketInfoMovies, TicketInfoRow parentTicketInfoRowByFK_TicketInfo_UserTicketInfoMovies, int MovieID) {
                 UserTicketInfoMoviesRow rowUserTicketInfoMoviesRow = ((UserTicketInfoMoviesRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         null,
                         MovieID};
-                if ((parentUserRowByUser_UserTicketInfoMovies != null)) {
-                    columnValuesArray[0] = parentUserRowByUser_UserTicketInfoMovies[0];
+                if ((parentUserRowByFK_User_UserTicketInfoMovies != null)) {
+                    columnValuesArray[0] = parentUserRowByFK_User_UserTicketInfoMovies[0];
                 }
-                if ((parentTicketInfoRowByTicketInfo_UserTicketInfoMovies != null)) {
-                    columnValuesArray[1] = parentTicketInfoRowByTicketInfo_UserTicketInfoMovies[1];
+                if ((parentTicketInfoRowByFK_TicketInfo_UserTicketInfoMovies != null)) {
+                    columnValuesArray[1] = parentTicketInfoRowByFK_TicketInfo_UserTicketInfoMovies[1];
                 }
                 rowUserTicketInfoMoviesRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowUserTicketInfoMoviesRow);
@@ -2253,7 +2257,7 @@ namespace WindowsFormsApp1 {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                DataSet1 ds = new DataSet1();
+                MTDBTESTDataSet ds = new MTDBTESTDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -2390,11 +2394,11 @@ namespace WindowsFormsApp1 {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public TicketInfoRow[] GetTicketInfoRows() {
-                if ((this.Table.ChildRelations["Movies_TicketInfo"] == null)) {
+                if ((this.Table.ChildRelations["FK_Movies_TicketInfo"] == null)) {
                     return new TicketInfoRow[0];
                 }
                 else {
-                    return ((TicketInfoRow[])(base.GetChildRows(this.Table.ChildRelations["Movies_TicketInfo"])));
+                    return ((TicketInfoRow[])(base.GetChildRows(this.Table.ChildRelations["FK_Movies_TicketInfo"])));
                 }
             }
             
@@ -2618,21 +2622,21 @@ namespace WindowsFormsApp1 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public MoviesRow MoviesRow {
                 get {
-                    return ((MoviesRow)(this.GetParentRow(this.Table.ParentRelations["Movies_TicketInfo"])));
+                    return ((MoviesRow)(this.GetParentRow(this.Table.ParentRelations["FK_Movies_TicketInfo"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["Movies_TicketInfo"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_Movies_TicketInfo"]);
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public UserTicketInfoMoviesRow[] GetUserTicketInfoMoviesRows() {
-                if ((this.Table.ChildRelations["TicketInfo_UserTicketInfoMovies"] == null)) {
+                if ((this.Table.ChildRelations["FK_TicketInfo_UserTicketInfoMovies"] == null)) {
                     return new UserTicketInfoMoviesRow[0];
                 }
                 else {
-                    return ((UserTicketInfoMoviesRow[])(base.GetChildRows(this.Table.ChildRelations["TicketInfo_UserTicketInfoMovies"])));
+                    return ((UserTicketInfoMoviesRow[])(base.GetChildRows(this.Table.ChildRelations["FK_TicketInfo_UserTicketInfoMovies"])));
                 }
             }
         }
@@ -2698,11 +2702,11 @@ namespace WindowsFormsApp1 {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public UserTicketInfoMoviesRow[] GetUserTicketInfoMoviesRows() {
-                if ((this.Table.ChildRelations["User_UserTicketInfoMovies"] == null)) {
+                if ((this.Table.ChildRelations["FK_User_UserTicketInfoMovies"] == null)) {
                     return new UserTicketInfoMoviesRow[0];
                 }
                 else {
-                    return ((UserTicketInfoMoviesRow[])(base.GetChildRows(this.Table.ChildRelations["User_UserTicketInfoMovies"])));
+                    return ((UserTicketInfoMoviesRow[])(base.GetChildRows(this.Table.ChildRelations["FK_User_UserTicketInfoMovies"])));
                 }
             }
         }
@@ -2756,23 +2760,23 @@ namespace WindowsFormsApp1 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public UserRow UserRow {
+            public TicketInfoRow TicketInfoRow {
                 get {
-                    return ((UserRow)(this.GetParentRow(this.Table.ParentRelations["User_UserTicketInfoMovies"])));
+                    return ((TicketInfoRow)(this.GetParentRow(this.Table.ParentRelations["FK_TicketInfo_UserTicketInfoMovies"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["User_UserTicketInfoMovies"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_TicketInfo_UserTicketInfoMovies"]);
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public TicketInfoRow TicketInfoRow {
+            public UserRow UserRow {
                 get {
-                    return ((TicketInfoRow)(this.GetParentRow(this.Table.ParentRelations["TicketInfo_UserTicketInfoMovies"])));
+                    return ((UserRow)(this.GetParentRow(this.Table.ParentRelations["FK_User_UserTicketInfoMovies"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["TicketInfo_UserTicketInfoMovies"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_User_UserTicketInfoMovies"]);
                 }
             }
         }
@@ -2982,7 +2986,7 @@ namespace WindowsFormsApp1 {
         }
     }
 }
-namespace WindowsFormsApp1.DataSet1TableAdapters {
+namespace WindowsFormsApp1.MTDBTESTDataSetTableAdapters {
     
     
     /// <summary>
@@ -3158,18 +3162,27 @@ SELECT MovieName, MovieID, Genre, ReleaseDate FROM Movies WHERE (MovieID = @Movi
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT MovieName, MovieID, Genre, ReleaseDate FROM dbo.Movies";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "INSERT INTO [dbo].[Movies] ([MovieName], [Genre], [ReleaseDate]) VALUES (@MovieNa" +
+                "me, @Genre, @ReleaseDate);\r\nSELECT MovieName, MovieID, Genre, ReleaseDate FROM [" +
+                "Movies] WHERE (MovieID = SCOPE_IDENTITY())";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MovieName", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "MovieName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Genre", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Genre", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ReleaseDate", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "ReleaseDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DataSet1.MoviesDataTable dataTable) {
+        public virtual int Fill(MTDBTESTDataSet.MoviesDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -3182,9 +3195,9 @@ SELECT MovieName, MovieID, Genre, ReleaseDate FROM Movies WHERE (MovieID = @Movi
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DataSet1.MoviesDataTable GetData() {
+        public virtual MTDBTESTDataSet.MoviesDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            DataSet1.MoviesDataTable dataTable = new DataSet1.MoviesDataTable();
+            MTDBTESTDataSet.MoviesDataTable dataTable = new MTDBTESTDataSet.MoviesDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -3192,14 +3205,14 @@ SELECT MovieName, MovieID, Genre, ReleaseDate FROM Movies WHERE (MovieID = @Movi
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DataSet1.MoviesDataTable dataTable) {
+        public virtual int Update(MTDBTESTDataSet.MoviesDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DataSet1 dataSet) {
+        public virtual int Update(MTDBTESTDataSet dataSet) {
             return this.Adapter.Update(dataSet, "Movies");
         }
         
@@ -3347,6 +3360,47 @@ SELECT MovieName, MovieID, Genre, ReleaseDate FROM Movies WHERE (MovieID = @Movi
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
         public virtual int Update(string MovieName, string Genre, System.DateTime ReleaseDate, string Original_MovieName, int Original_MovieID, string Original_Genre, System.DateTime Original_ReleaseDate) {
             return this.Update(MovieName, Original_MovieID, Genre, ReleaseDate, Original_MovieName, Original_MovieID, Original_Genre, Original_ReleaseDate);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
+        public virtual int AddMovieDataQuery(string MovieName, string Genre, string ReleaseDate) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[1];
+            if ((MovieName == null)) {
+                throw new global::System.ArgumentNullException("MovieName");
+            }
+            else {
+                command.Parameters[0].Value = ((string)(MovieName));
+            }
+            if ((Genre == null)) {
+                command.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[1].Value = ((string)(Genre));
+            }
+            if ((ReleaseDate == null)) {
+                throw new global::System.ArgumentNullException("ReleaseDate");
+            }
+            else {
+                command.Parameters[2].Value = ((string)(ReleaseDate));
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
         }
     }
     
@@ -3526,7 +3580,7 @@ SELECT ScreeningRoomID, MovieID, ScreeningRoomNumber FROM ScreeningRoomInfo WHER
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DataSet1.ScreeningRoomInfoDataTable dataTable) {
+        public virtual int Fill(MTDBTESTDataSet.ScreeningRoomInfoDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -3539,9 +3593,9 @@ SELECT ScreeningRoomID, MovieID, ScreeningRoomNumber FROM ScreeningRoomInfo WHER
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DataSet1.ScreeningRoomInfoDataTable GetData() {
+        public virtual MTDBTESTDataSet.ScreeningRoomInfoDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            DataSet1.ScreeningRoomInfoDataTable dataTable = new DataSet1.ScreeningRoomInfoDataTable();
+            MTDBTESTDataSet.ScreeningRoomInfoDataTable dataTable = new MTDBTESTDataSet.ScreeningRoomInfoDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -3549,14 +3603,14 @@ SELECT ScreeningRoomID, MovieID, ScreeningRoomNumber FROM ScreeningRoomInfo WHER
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DataSet1.ScreeningRoomInfoDataTable dataTable) {
+        public virtual int Update(MTDBTESTDataSet.ScreeningRoomInfoDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DataSet1 dataSet) {
+        public virtual int Update(MTDBTESTDataSet dataSet) {
             return this.Adapter.Update(dataSet, "ScreeningRoomInfo");
         }
         
@@ -3841,7 +3895,7 @@ SELECT ShowTimeID, MovieID, ScreeningRoomID, ActualShowTimeDateTime FROM ShowTim
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DataSet1.ShowTimeInfoDataTable dataTable) {
+        public virtual int Fill(MTDBTESTDataSet.ShowTimeInfoDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -3854,9 +3908,9 @@ SELECT ShowTimeID, MovieID, ScreeningRoomID, ActualShowTimeDateTime FROM ShowTim
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DataSet1.ShowTimeInfoDataTable GetData() {
+        public virtual MTDBTESTDataSet.ShowTimeInfoDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            DataSet1.ShowTimeInfoDataTable dataTable = new DataSet1.ShowTimeInfoDataTable();
+            MTDBTESTDataSet.ShowTimeInfoDataTable dataTable = new MTDBTESTDataSet.ShowTimeInfoDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -3864,14 +3918,14 @@ SELECT ShowTimeID, MovieID, ScreeningRoomID, ActualShowTimeDateTime FROM ShowTim
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DataSet1.ShowTimeInfoDataTable dataTable) {
+        public virtual int Update(MTDBTESTDataSet.ShowTimeInfoDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DataSet1 dataSet) {
+        public virtual int Update(MTDBTESTDataSet dataSet) {
             return this.Adapter.Update(dataSet, "ShowTimeInfo");
         }
         
@@ -4178,7 +4232,7 @@ SELECT MovieID, TicketID, PurachseDate FROM TicketInfo WHERE (MovieID = @MovieID
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DataSet1.TicketInfoDataTable dataTable) {
+        public virtual int Fill(MTDBTESTDataSet.TicketInfoDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -4191,9 +4245,9 @@ SELECT MovieID, TicketID, PurachseDate FROM TicketInfo WHERE (MovieID = @MovieID
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DataSet1.TicketInfoDataTable GetData() {
+        public virtual MTDBTESTDataSet.TicketInfoDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            DataSet1.TicketInfoDataTable dataTable = new DataSet1.TicketInfoDataTable();
+            MTDBTESTDataSet.TicketInfoDataTable dataTable = new MTDBTESTDataSet.TicketInfoDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -4201,14 +4255,14 @@ SELECT MovieID, TicketID, PurachseDate FROM TicketInfo WHERE (MovieID = @MovieID
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DataSet1.TicketInfoDataTable dataTable) {
+        public virtual int Update(MTDBTESTDataSet.TicketInfoDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DataSet1 dataSet) {
+        public virtual int Update(MTDBTESTDataSet dataSet) {
             return this.Adapter.Update(dataSet, "TicketInfo");
         }
         
@@ -4449,20 +4503,18 @@ SELECT MovieID, TicketID, PurachseDate FROM TicketInfo WHERE (MovieID = @MovieID
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PassWord", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PassWord", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[User] ([UserID], [UserStatus], [UserName], [PassWord]) VALUES " +
-                "(@UserID, @UserStatus, @UserName, @PassWord);\r\nSELECT UserID, UserStatus, UserNa" +
-                "me, PassWord FROM [User] WHERE (UserID = @UserID)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[User] ([UserStatus], [UserName], [PassWord]) VALUES (@UserStat" +
+                "us, @UserName, @PassWord);\r\nSELECT UserID, UserStatus, UserName, PassWord FROM [" +
+                "User] WHERE (UserID = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UserID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UserID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UserStatus", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UserStatus", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UserName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UserName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PassWord", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PassWord", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[User] SET [UserID] = @UserID, [UserStatus] = @UserStatus, [UserName] = @UserName, [PassWord] = @PassWord WHERE (([UserID] = @Original_UserID) AND ([UserStatus] = @Original_UserStatus) AND ([UserName] = @Original_UserName) AND ([PassWord] = @Original_PassWord));
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[User] SET [UserStatus] = @UserStatus, [UserName] = @UserName, [PassWord] = @PassWord WHERE (([UserID] = @Original_UserID) AND ([UserStatus] = @Original_UserStatus) AND ([UserName] = @Original_UserName) AND ([PassWord] = @Original_PassWord));
 SELECT UserID, UserStatus, UserName, PassWord FROM [User] WHERE (UserID = @UserID)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UserID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UserID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UserStatus", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UserStatus", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UserName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UserName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PassWord", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PassWord", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -4470,6 +4522,7 @@ SELECT UserID, UserStatus, UserName, PassWord FROM [User] WHERE (UserID = @UserI
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_UserStatus", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UserStatus", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_UserName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UserName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PassWord", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PassWord", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UserID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "UserID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4482,7 +4535,7 @@ SELECT UserID, UserStatus, UserName, PassWord FROM [User] WHERE (UserID = @UserI
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[4];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[5];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT UserID, UserStatus, UserName, PassWord FROM dbo.[User]";
@@ -4497,11 +4550,11 @@ SELECT UserID, UserStatus, UserName, PassWord FROM [User] WHERE (UserID = @UserI
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PassWord", global::System.Data.SqlDbType.NVarChar, 25, global::System.Data.ParameterDirection.Input, 0, 0, "PassWord", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "SELECT COUNT(*)\r\nFROM dbo.[User]\r\nWHERE  UserName = @userName AND PassWord = @pas" +
-                "sWord";
+            this._commandCollection[2].CommandText = "SELECT COUNT(*) \r\nFROM dbo.[User]\r\nWHERE UserStatus = \'Manager\' AND UserName = @M" +
+                "anagerName AND PassWord = @ManagerPassword";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@userName", global::System.Data.SqlDbType.NVarChar, 25, global::System.Data.ParameterDirection.Input, 0, 0, "UserName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@passWord", global::System.Data.SqlDbType.NVarChar, 25, global::System.Data.ParameterDirection.Input, 0, 0, "PassWord", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ManagerName", global::System.Data.SqlDbType.NVarChar, 25, global::System.Data.ParameterDirection.Input, 0, 0, "UserName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ManagerPassword", global::System.Data.SqlDbType.NVarChar, 25, global::System.Data.ParameterDirection.Input, 0, 0, "PassWord", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[3].Connection = this.Connection;
             this._commandCollection[3].CommandText = "SELECT COUNT(*)\r\nFROM dbo.[User]\r\nWHERE  UserName = @userName AND PassWord = @pas" +
@@ -4509,13 +4562,20 @@ SELECT UserID, UserStatus, UserName, PassWord FROM [User] WHERE (UserID = @UserI
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@userName", global::System.Data.SqlDbType.NVarChar, 25, global::System.Data.ParameterDirection.Input, 0, 0, "UserName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@passWord", global::System.Data.SqlDbType.NVarChar, 25, global::System.Data.ParameterDirection.Input, 0, 0, "PassWord", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[4].Connection = this.Connection;
+            this._commandCollection[4].CommandText = "SELECT COUNT(*)\r\nFROM dbo.[User]\r\nWHERE  UserName = @userName AND PassWord = @pas" +
+                "sWord";
+            this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@userName", global::System.Data.SqlDbType.NVarChar, 25, global::System.Data.ParameterDirection.Input, 0, 0, "UserName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@passWord", global::System.Data.SqlDbType.NVarChar, 25, global::System.Data.ParameterDirection.Input, 0, 0, "PassWord", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DataSet1.UserDataTable dataTable) {
+        public virtual int Fill(MTDBTESTDataSet.UserDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -4528,9 +4588,9 @@ SELECT UserID, UserStatus, UserName, PassWord FROM [User] WHERE (UserID = @UserI
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DataSet1.UserDataTable GetData() {
+        public virtual MTDBTESTDataSet.UserDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            DataSet1.UserDataTable dataTable = new DataSet1.UserDataTable();
+            MTDBTESTDataSet.UserDataTable dataTable = new MTDBTESTDataSet.UserDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -4538,14 +4598,14 @@ SELECT UserID, UserStatus, UserName, PassWord FROM [User] WHERE (UserID = @UserI
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DataSet1.UserDataTable dataTable) {
+        public virtual int Update(MTDBTESTDataSet.UserDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DataSet1 dataSet) {
+        public virtual int Update(MTDBTESTDataSet dataSet) {
             return this.Adapter.Update(dataSet, "User");
         }
         
@@ -4608,25 +4668,24 @@ SELECT UserID, UserStatus, UserName, PassWord FROM [User] WHERE (UserID = @UserI
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int UserID, string UserStatus, string UserName, string PassWord) {
-            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(UserID));
+        public virtual int Insert(string UserStatus, string UserName, string PassWord) {
             if ((UserStatus == null)) {
                 throw new global::System.ArgumentNullException("UserStatus");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(UserStatus));
+                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(UserStatus));
             }
             if ((UserName == null)) {
                 throw new global::System.ArgumentNullException("UserName");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(UserName));
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(UserName));
             }
             if ((PassWord == null)) {
                 throw new global::System.ArgumentNullException("PassWord");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(PassWord));
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(PassWord));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -4648,45 +4707,45 @@ SELECT UserID, UserStatus, UserName, PassWord FROM [User] WHERE (UserID = @UserI
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int UserID, string UserStatus, string UserName, string PassWord, int Original_UserID, string Original_UserStatus, string Original_UserName, string Original_PassWord) {
-            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(UserID));
+        public virtual int Update(string UserStatus, string UserName, string PassWord, int Original_UserID, string Original_UserStatus, string Original_UserName, string Original_PassWord, int UserID) {
             if ((UserStatus == null)) {
                 throw new global::System.ArgumentNullException("UserStatus");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(UserStatus));
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(UserStatus));
             }
             if ((UserName == null)) {
                 throw new global::System.ArgumentNullException("UserName");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(UserName));
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(UserName));
             }
             if ((PassWord == null)) {
                 throw new global::System.ArgumentNullException("PassWord");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(PassWord));
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(PassWord));
             }
-            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Original_UserID));
+            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Original_UserID));
             if ((Original_UserStatus == null)) {
                 throw new global::System.ArgumentNullException("Original_UserStatus");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(Original_UserStatus));
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(Original_UserStatus));
             }
             if ((Original_UserName == null)) {
                 throw new global::System.ArgumentNullException("Original_UserName");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Original_UserName));
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(Original_UserName));
             }
             if ((Original_PassWord == null)) {
                 throw new global::System.ArgumentNullException("Original_PassWord");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Original_PassWord));
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Original_PassWord));
             }
+            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(UserID));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -4708,7 +4767,7 @@ SELECT UserID, UserStatus, UserName, PassWord FROM [User] WHERE (UserID = @UserI
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
         public virtual int Update(string UserStatus, string UserName, string PassWord, int Original_UserID, string Original_UserStatus, string Original_UserName, string Original_PassWord) {
-            return this.Update(Original_UserID, UserStatus, UserName, PassWord, Original_UserID, Original_UserStatus, Original_UserName, Original_PassWord);
+            return this.Update(UserStatus, UserName, PassWord, Original_UserID, Original_UserStatus, Original_UserName, Original_PassWord, Original_UserID);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4749,19 +4808,19 @@ SELECT UserID, UserStatus, UserName, PassWord FROM [User] WHERE (UserID = @UserI
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual object CheckNameQuery(string userName, string passWord) {
+        public virtual global::System.Nullable<int> CheckManagerQuery(string ManagerName, string ManagerPassword) {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[2];
-            if ((userName == null)) {
-                throw new global::System.ArgumentNullException("userName");
+            if ((ManagerName == null)) {
+                throw new global::System.ArgumentNullException("ManagerName");
             }
             else {
-                command.Parameters[0].Value = ((string)(userName));
+                command.Parameters[0].Value = ((string)(ManagerName));
             }
-            if ((passWord == null)) {
-                throw new global::System.ArgumentNullException("passWord");
+            if ((ManagerPassword == null)) {
+                throw new global::System.ArgumentNullException("ManagerPassword");
             }
             else {
-                command.Parameters[1].Value = ((string)(passWord));
+                command.Parameters[1].Value = ((string)(ManagerPassword));
             }
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -4779,17 +4838,17 @@ SELECT UserID, UserStatus, UserName, PassWord FROM [User] WHERE (UserID = @UserI
             }
             if (((returnValue == null) 
                         || (returnValue.GetType() == typeof(global::System.DBNull)))) {
-                return null;
+                return new global::System.Nullable<int>();
             }
             else {
-                return ((object)(returnValue));
+                return new global::System.Nullable<int>(((int)(returnValue)));
             }
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual object CheckPasswordQuery(string userName, string passWord) {
+        public virtual global::System.Nullable<int> CheckNameQuery(string userName, string passWord) {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[3];
             if ((userName == null)) {
                 throw new global::System.ArgumentNullException("userName");
@@ -4819,10 +4878,50 @@ SELECT UserID, UserStatus, UserName, PassWord FROM [User] WHERE (UserID = @UserI
             }
             if (((returnValue == null) 
                         || (returnValue.GetType() == typeof(global::System.DBNull)))) {
-                return null;
+                return new global::System.Nullable<int>();
             }
             else {
-                return ((object)(returnValue));
+                return new global::System.Nullable<int>(((int)(returnValue)));
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual global::System.Nullable<int> CheckPasswordQuery(string userName, string passWord) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[4];
+            if ((userName == null)) {
+                throw new global::System.ArgumentNullException("userName");
+            }
+            else {
+                command.Parameters[0].Value = ((string)(userName));
+            }
+            if ((passWord == null)) {
+                throw new global::System.ArgumentNullException("passWord");
+            }
+            else {
+                command.Parameters[1].Value = ((string)(passWord));
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            object returnValue;
+            try {
+                returnValue = command.ExecuteScalar();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            if (((returnValue == null) 
+                        || (returnValue.GetType() == typeof(global::System.DBNull)))) {
+                return new global::System.Nullable<int>();
+            }
+            else {
+                return new global::System.Nullable<int>(((int)(returnValue)));
             }
         }
     }
@@ -5004,7 +5103,7 @@ SELECT UserID, TicketID, MovieID FROM UserTicketInfoMovies WHERE (MovieID = @Mov
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DataSet1.UserTicketInfoMoviesDataTable dataTable) {
+        public virtual int Fill(MTDBTESTDataSet.UserTicketInfoMoviesDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -5017,9 +5116,9 @@ SELECT UserID, TicketID, MovieID FROM UserTicketInfoMovies WHERE (MovieID = @Mov
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DataSet1.UserTicketInfoMoviesDataTable GetData() {
+        public virtual MTDBTESTDataSet.UserTicketInfoMoviesDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            DataSet1.UserTicketInfoMoviesDataTable dataTable = new DataSet1.UserTicketInfoMoviesDataTable();
+            MTDBTESTDataSet.UserTicketInfoMoviesDataTable dataTable = new MTDBTESTDataSet.UserTicketInfoMoviesDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -5027,14 +5126,14 @@ SELECT UserID, TicketID, MovieID FROM UserTicketInfoMovies WHERE (MovieID = @Mov
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DataSet1.UserTicketInfoMoviesDataTable dataTable) {
+        public virtual int Update(MTDBTESTDataSet.UserTicketInfoMoviesDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DataSet1 dataSet) {
+        public virtual int Update(MTDBTESTDataSet dataSet) {
             return this.Adapter.Update(dataSet, "UserTicketInfoMovies");
         }
         
@@ -5343,7 +5442,7 @@ SELECT UserID, TicketID, MovieID FROM UserTicketInfoMovies WHERE (MovieID = @Mov
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private int UpdateUpdatedRows(DataSet1 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(MTDBTESTDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             if ((this._moviesTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.Movies.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
@@ -5407,7 +5506,7 @@ SELECT UserID, TicketID, MovieID FROM UserTicketInfoMovies WHERE (MovieID = @Mov
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private int UpdateInsertedRows(DataSet1 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(MTDBTESTDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             if ((this._moviesTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.Movies.Select(null, null, global::System.Data.DataViewRowState.Added);
@@ -5465,7 +5564,7 @@ SELECT UserID, TicketID, MovieID FROM UserTicketInfoMovies WHERE (MovieID = @Mov
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private int UpdateDeletedRows(DataSet1 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(MTDBTESTDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
             if ((this._userTicketInfoMoviesTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.UserTicketInfoMovies.Select(null, null, global::System.Data.DataViewRowState.Deleted);
@@ -5547,7 +5646,7 @@ SELECT UserID, TicketID, MovieID FROM UserTicketInfoMovies WHERE (MovieID = @Mov
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public virtual int UpdateAll(DataSet1 dataSet) {
+        public virtual int UpdateAll(MTDBTESTDataSet dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }

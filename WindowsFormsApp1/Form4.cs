@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsFormsApp1.MTDBTESTDataSetTableAdapters;
 
 namespace WindowsFormsApp1
 {
@@ -21,21 +22,41 @@ namespace WindowsFormsApp1
         {
             this.Validate();
             this.userBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.dataSet1);
+            this.tableAdapterManager1.UpdateAll(this.mTDBTESTDataSet);
 
         }
 
         private void RegisterForm_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'dataSet1.User' table. You can move, or remove it, as needed.
-            this.userTableAdapter.Fill(this.dataSet1.User);
+            // TODO: This line of code loads data into the 'mTDBTESTDataSet.User' table. You can move, or remove it, as needed.
+            this.userTableAdapter1.Fill(this.mTDBTESTDataSet.User);
 
         }
 
-        private void RegisterButton_Click(object sender, EventArgs e)
+        private void userBindingSource1BindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
-            this.userTableAdapter.AddClientQuery(this.RegisterUserNameTextBox.Text,this.RegisterPassWordTextBox.Text);
+            this.Validate();
+            this.userBindingSource1.EndEdit();
+            this.tableAdapterManager1.UpdateAll(this.mTDBTESTDataSet);
+
+        }
+
+        private void RegisterForm_Load_1(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'mTDBTESTDataSet.User' table. You can move, or remove it, as needed.
+            this.userTableAdapter1.Fill(this.mTDBTESTDataSet.User);
+
+        }
+
+        private void theRegisterButton_Click(object sender, EventArgs e)
+        {
+            this.userTableAdapter1.AddClientQuery(this.theUserTextBox.Text, this.thePasswordTextBox.Text);
             MessageBox.Show("You had been registered!");
+            this.Close();
+        }
+
+        private void theCancelButton_Click(object sender, EventArgs e)
+        {
             this.Close();
         }
     }
