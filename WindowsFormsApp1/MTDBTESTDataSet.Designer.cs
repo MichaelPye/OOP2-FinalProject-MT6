@@ -42,9 +42,9 @@ namespace WindowsFormsApp1 {
         
         private global::System.Data.DataRelation relationFK_Movies_TicketInfo;
         
-        private global::System.Data.DataRelation relationFK_TicketInfo_UserTicketInfoMovies;
-        
         private global::System.Data.DataRelation relationFK_User_UserTicketInfoMovies;
+        
+        private global::System.Data.DataRelation relationFK_TicketInfo_UserTicketInfoMovies;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -327,8 +327,8 @@ namespace WindowsFormsApp1 {
             this.relationFK_Movies_ScreeningRoomInfo = this.Relations["FK_Movies_ScreeningRoomInfo"];
             this.relationFK_ScreeningRoomInfo_ShowTimeInfo = this.Relations["FK_ScreeningRoomInfo_ShowTimeInfo"];
             this.relationFK_Movies_TicketInfo = this.Relations["FK_Movies_TicketInfo"];
-            this.relationFK_TicketInfo_UserTicketInfoMovies = this.Relations["FK_TicketInfo_UserTicketInfoMovies"];
             this.relationFK_User_UserTicketInfoMovies = this.Relations["FK_User_UserTicketInfoMovies"];
+            this.relationFK_TicketInfo_UserTicketInfoMovies = this.Relations["FK_TicketInfo_UserTicketInfoMovies"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -373,16 +373,16 @@ namespace WindowsFormsApp1 {
             fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
             fkc.DeleteRule = global::System.Data.Rule.Cascade;
             fkc.UpdateRule = global::System.Data.Rule.Cascade;
-            fkc = new global::System.Data.ForeignKeyConstraint("FK_TicketInfo_UserTicketInfoMovies", new global::System.Data.DataColumn[] {
-                        this.tableTicketInfo.TicketIDColumn}, new global::System.Data.DataColumn[] {
-                        this.tableUserTicketInfoMovies.TicketIDColumn});
+            fkc = new global::System.Data.ForeignKeyConstraint("FK_User_UserTicketInfoMovies", new global::System.Data.DataColumn[] {
+                        this.tableUser.UserIDColumn}, new global::System.Data.DataColumn[] {
+                        this.tableUserTicketInfoMovies.UserIDColumn});
             this.tableUserTicketInfoMovies.Constraints.Add(fkc);
             fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
             fkc.DeleteRule = global::System.Data.Rule.Cascade;
             fkc.UpdateRule = global::System.Data.Rule.Cascade;
-            fkc = new global::System.Data.ForeignKeyConstraint("FK_User_UserTicketInfoMovies", new global::System.Data.DataColumn[] {
-                        this.tableUser.UserIDColumn}, new global::System.Data.DataColumn[] {
-                        this.tableUserTicketInfoMovies.UserIDColumn});
+            fkc = new global::System.Data.ForeignKeyConstraint("FK_TicketInfo_UserTicketInfoMovies", new global::System.Data.DataColumn[] {
+                        this.tableTicketInfo.TicketIDColumn}, new global::System.Data.DataColumn[] {
+                        this.tableUserTicketInfoMovies.TicketIDColumn});
             this.tableUserTicketInfoMovies.Constraints.Add(fkc);
             fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
             fkc.DeleteRule = global::System.Data.Rule.Cascade;
@@ -399,14 +399,14 @@ namespace WindowsFormsApp1 {
                         this.tableMovies.MovieIDColumn}, new global::System.Data.DataColumn[] {
                         this.tableTicketInfo.MovieIDColumn}, false);
             this.Relations.Add(this.relationFK_Movies_TicketInfo);
-            this.relationFK_TicketInfo_UserTicketInfoMovies = new global::System.Data.DataRelation("FK_TicketInfo_UserTicketInfoMovies", new global::System.Data.DataColumn[] {
-                        this.tableTicketInfo.TicketIDColumn}, new global::System.Data.DataColumn[] {
-                        this.tableUserTicketInfoMovies.TicketIDColumn}, false);
-            this.Relations.Add(this.relationFK_TicketInfo_UserTicketInfoMovies);
             this.relationFK_User_UserTicketInfoMovies = new global::System.Data.DataRelation("FK_User_UserTicketInfoMovies", new global::System.Data.DataColumn[] {
                         this.tableUser.UserIDColumn}, new global::System.Data.DataColumn[] {
                         this.tableUserTicketInfoMovies.UserIDColumn}, false);
             this.Relations.Add(this.relationFK_User_UserTicketInfoMovies);
+            this.relationFK_TicketInfo_UserTicketInfoMovies = new global::System.Data.DataRelation("FK_TicketInfo_UserTicketInfoMovies", new global::System.Data.DataColumn[] {
+                        this.tableTicketInfo.TicketIDColumn}, new global::System.Data.DataColumn[] {
+                        this.tableUserTicketInfoMovies.TicketIDColumn}, false);
+            this.Relations.Add(this.relationFK_TicketInfo_UserTicketInfoMovies);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2760,23 +2760,23 @@ namespace WindowsFormsApp1 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public TicketInfoRow TicketInfoRow {
-                get {
-                    return ((TicketInfoRow)(this.GetParentRow(this.Table.ParentRelations["FK_TicketInfo_UserTicketInfoMovies"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK_TicketInfo_UserTicketInfoMovies"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public UserRow UserRow {
                 get {
                     return ((UserRow)(this.GetParentRow(this.Table.ParentRelations["FK_User_UserTicketInfoMovies"])));
                 }
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["FK_User_UserTicketInfoMovies"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public TicketInfoRow TicketInfoRow {
+                get {
+                    return ((TicketInfoRow)(this.GetParentRow(this.Table.ParentRelations["FK_TicketInfo_UserTicketInfoMovies"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_TicketInfo_UserTicketInfoMovies"]);
                 }
             }
         }
@@ -3162,7 +3162,7 @@ SELECT MovieName, MovieID, Genre, ReleaseDate FROM Movies WHERE (MovieID = @Movi
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT MovieName, MovieID, Genre, ReleaseDate FROM dbo.Movies";
@@ -3176,6 +3176,11 @@ SELECT MovieName, MovieID, Genre, ReleaseDate FROM Movies WHERE (MovieID = @Movi
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MovieName", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "MovieName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Genre", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Genre", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ReleaseDate", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "ReleaseDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = "DELETE FROM [dbo].[Movies] WHERE MovieID = @ID";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "MovieID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3386,6 +3391,30 @@ SELECT MovieName, MovieID, Genre, ReleaseDate FROM Movies WHERE (MovieID = @Movi
             else {
                 command.Parameters[2].Value = ((string)(ReleaseDate));
             }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, false)]
+        public virtual int DeleteSelectedItemQuery(int ID) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[2];
+            command.Parameters[0].Value = ((int)(ID));
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {

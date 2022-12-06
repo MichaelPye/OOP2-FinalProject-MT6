@@ -83,6 +83,7 @@
             this.deleteButton.TabIndex = 3;
             this.deleteButton.Text = "Delete";
             this.deleteButton.UseVisualStyleBackColor = true;
+            this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
             // 
             // movieLabel
             // 
@@ -164,6 +165,7 @@
             this.closeButton.TabIndex = 18;
             this.closeButton.Text = "Close";
             this.closeButton.UseVisualStyleBackColor = true;
+            this.closeButton.Click += new System.EventHandler(this.closeButton_Click);
             // 
             // moviesTableAdapter1
             // 
