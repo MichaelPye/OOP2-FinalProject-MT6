@@ -108,8 +108,6 @@ namespace WindowsFormsApp1
                 clientListView.Items[clientID - 2].SubItems.Add(clientPassword);
 
                 this.userTableAdapter.AddClientQuery(clientName, clientPassword);
-
-                MessageBox.Show(this.clientListView.Columns.Count.ToString());
             }
         }
 
