@@ -42,9 +42,9 @@ namespace WindowsFormsApp1 {
         
         private global::System.Data.DataRelation relationFK_Movies_TicketInfo;
         
-        private global::System.Data.DataRelation relationFK_TicketInfo_UserTicketInfoMovies;
-        
         private global::System.Data.DataRelation relationFK_User_UserTicketInfoMovies;
+        
+        private global::System.Data.DataRelation relationFK_TicketInfo_UserTicketInfoMovies;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -327,8 +327,8 @@ namespace WindowsFormsApp1 {
             this.relationFK_Movies_ScreeningRoomInfo = this.Relations["FK_Movies_ScreeningRoomInfo"];
             this.relationFK_ScreeningRoomInfo_ShowTimeInfo = this.Relations["FK_ScreeningRoomInfo_ShowTimeInfo"];
             this.relationFK_Movies_TicketInfo = this.Relations["FK_Movies_TicketInfo"];
-            this.relationFK_TicketInfo_UserTicketInfoMovies = this.Relations["FK_TicketInfo_UserTicketInfoMovies"];
             this.relationFK_User_UserTicketInfoMovies = this.Relations["FK_User_UserTicketInfoMovies"];
+            this.relationFK_TicketInfo_UserTicketInfoMovies = this.Relations["FK_TicketInfo_UserTicketInfoMovies"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -373,16 +373,16 @@ namespace WindowsFormsApp1 {
             fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
             fkc.DeleteRule = global::System.Data.Rule.Cascade;
             fkc.UpdateRule = global::System.Data.Rule.Cascade;
-            fkc = new global::System.Data.ForeignKeyConstraint("FK_TicketInfo_UserTicketInfoMovies", new global::System.Data.DataColumn[] {
-                        this.tableTicketInfo.TicketIDColumn}, new global::System.Data.DataColumn[] {
-                        this.tableUserTicketInfoMovies.TicketIDColumn});
+            fkc = new global::System.Data.ForeignKeyConstraint("FK_User_UserTicketInfoMovies", new global::System.Data.DataColumn[] {
+                        this.tableUser.UserIDColumn}, new global::System.Data.DataColumn[] {
+                        this.tableUserTicketInfoMovies.UserIDColumn});
             this.tableUserTicketInfoMovies.Constraints.Add(fkc);
             fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
             fkc.DeleteRule = global::System.Data.Rule.Cascade;
             fkc.UpdateRule = global::System.Data.Rule.Cascade;
-            fkc = new global::System.Data.ForeignKeyConstraint("FK_User_UserTicketInfoMovies", new global::System.Data.DataColumn[] {
-                        this.tableUser.UserIDColumn}, new global::System.Data.DataColumn[] {
-                        this.tableUserTicketInfoMovies.UserIDColumn});
+            fkc = new global::System.Data.ForeignKeyConstraint("FK_TicketInfo_UserTicketInfoMovies", new global::System.Data.DataColumn[] {
+                        this.tableTicketInfo.TicketIDColumn}, new global::System.Data.DataColumn[] {
+                        this.tableUserTicketInfoMovies.TicketIDColumn});
             this.tableUserTicketInfoMovies.Constraints.Add(fkc);
             fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
             fkc.DeleteRule = global::System.Data.Rule.Cascade;
@@ -399,14 +399,14 @@ namespace WindowsFormsApp1 {
                         this.tableMovies.MovieIDColumn}, new global::System.Data.DataColumn[] {
                         this.tableTicketInfo.MovieIDColumn}, false);
             this.Relations.Add(this.relationFK_Movies_TicketInfo);
-            this.relationFK_TicketInfo_UserTicketInfoMovies = new global::System.Data.DataRelation("FK_TicketInfo_UserTicketInfoMovies", new global::System.Data.DataColumn[] {
-                        this.tableTicketInfo.TicketIDColumn}, new global::System.Data.DataColumn[] {
-                        this.tableUserTicketInfoMovies.TicketIDColumn}, false);
-            this.Relations.Add(this.relationFK_TicketInfo_UserTicketInfoMovies);
             this.relationFK_User_UserTicketInfoMovies = new global::System.Data.DataRelation("FK_User_UserTicketInfoMovies", new global::System.Data.DataColumn[] {
                         this.tableUser.UserIDColumn}, new global::System.Data.DataColumn[] {
                         this.tableUserTicketInfoMovies.UserIDColumn}, false);
             this.Relations.Add(this.relationFK_User_UserTicketInfoMovies);
+            this.relationFK_TicketInfo_UserTicketInfoMovies = new global::System.Data.DataRelation("FK_TicketInfo_UserTicketInfoMovies", new global::System.Data.DataColumn[] {
+                        this.tableTicketInfo.TicketIDColumn}, new global::System.Data.DataColumn[] {
+                        this.tableUserTicketInfoMovies.TicketIDColumn}, false);
+            this.Relations.Add(this.relationFK_TicketInfo_UserTicketInfoMovies);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2760,23 +2760,23 @@ namespace WindowsFormsApp1 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public TicketInfoRow TicketInfoRow {
-                get {
-                    return ((TicketInfoRow)(this.GetParentRow(this.Table.ParentRelations["FK_TicketInfo_UserTicketInfoMovies"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK_TicketInfo_UserTicketInfoMovies"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public UserRow UserRow {
                 get {
                     return ((UserRow)(this.GetParentRow(this.Table.ParentRelations["FK_User_UserTicketInfoMovies"])));
                 }
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["FK_User_UserTicketInfoMovies"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public TicketInfoRow TicketInfoRow {
+                get {
+                    return ((TicketInfoRow)(this.GetParentRow(this.Table.ParentRelations["FK_TicketInfo_UserTicketInfoMovies"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_TicketInfo_UserTicketInfoMovies"]);
                 }
             }
         }
@@ -3598,11 +3598,24 @@ SELECT ScreeningRoomID, MovieID, ScreeningRoomNumber FROM ScreeningRoomInfo WHER
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT ScreeningRoomID, MovieID, ScreeningRoomNumber FROM dbo.ScreeningRoomInfo";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "INSERT INTO [dbo].[ScreeningRoomInfo] ([MovieID], [ScreeningRoomNumber]) VALUES (" +
+                "@MovieID, @ScreeningRoomNumber);\r\nSELECT ScreeningRoomID, MovieID, ScreeningRoom" +
+                "Number FROM ScreeningRoomInfo WHERE (MovieID = SCOPE_IDENTITY())";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MovieID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "MovieID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ScreeningRoomNumber", global::System.Data.SqlDbType.VarChar, 5, global::System.Data.ParameterDirection.Input, 0, 0, "ScreeningRoomNumber", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = "DELETE FROM [dbo].[ScreeningRoomInfo] WHERE ScreeningRoomID= @ID";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ScreeningRoomID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3739,6 +3752,60 @@ SELECT ScreeningRoomID, MovieID, ScreeningRoomNumber FROM ScreeningRoomInfo WHER
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
         public virtual int Update(int MovieID, int ScreeningRoomNumber, int Original_ScreeningRoomID, int Original_MovieID, int Original_ScreeningRoomNumber) {
             return this.Update(Original_ScreeningRoomID, MovieID, ScreeningRoomNumber, Original_ScreeningRoomID, Original_MovieID, Original_ScreeningRoomNumber);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
+        public virtual int AddScreeningRoomDataInsertQuery(int MovieID, string ScreeningRoomNumber) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[1];
+            command.Parameters[0].Value = ((int)(MovieID));
+            if ((ScreeningRoomNumber == null)) {
+                throw new global::System.ArgumentNullException("ScreeningRoomNumber");
+            }
+            else {
+                command.Parameters[1].Value = ((string)(ScreeningRoomNumber));
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, false)]
+        public virtual int DeleteSelectedItemQuery(int ID) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[2];
+            command.Parameters[0].Value = ((int)(ID));
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
         }
     }
     
@@ -3912,12 +3979,25 @@ SELECT ShowTimeID, MovieID, ScreeningRoomID, ActualShowTimeDateTime FROM ShowTim
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT ShowTimeID, MovieID, ScreeningRoomID, ActualShowTimeDateTime FROM dbo.Show" +
                 "TimeInfo";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = @"INSERT INTO [dbo].[ShowTimeInfo] ([MovieID], [ScreeningRoomID], [ActualShowTimeDateTime]) VALUES (@MovieID, @ScreeningRoomID, @ActualShowTimeDateTime);
+SELECT ShowTimeID, MovieID, ScreeningRoomID, ActualShowTimeDateTime FROM ShowTimeInfo WHERE (ShowtimeID = SCOPE_IDENTITY())";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MovieID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "MovieID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ScreeningRoomID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ScreeningRoomID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ActualShowTimeDateTime", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "ActualShowTimeDateTime", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = "DELETE FROM [dbo].[ShowTimeInfo] WHERE ShowTimeID = @ID";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ShowTimeID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4082,6 +4162,61 @@ SELECT ShowTimeID, MovieID, ScreeningRoomID, ActualShowTimeDateTime FROM ShowTim
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
         public virtual int Update(int MovieID, int ScreeningRoomID, global::System.Nullable<global::System.DateTime> ActualShowTimeDateTime, int Original_ShowTimeID, int Original_MovieID, int Original_ScreeningRoomID, global::System.Nullable<global::System.DateTime> Original_ActualShowTimeDateTime) {
             return this.Update(Original_ShowTimeID, MovieID, ScreeningRoomID, ActualShowTimeDateTime, Original_ShowTimeID, Original_MovieID, Original_ScreeningRoomID, Original_ActualShowTimeDateTime);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
+        public virtual int AddShowTimeDataInsertQuery(int MovieID, int ScreeningRoomID, global::System.Nullable<global::System.DateTime> ActualShowTimeDateTime) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[1];
+            command.Parameters[0].Value = ((int)(MovieID));
+            command.Parameters[1].Value = ((int)(ScreeningRoomID));
+            if ((ActualShowTimeDateTime.HasValue == true)) {
+                command.Parameters[2].Value = ((System.DateTime)(ActualShowTimeDateTime.Value));
+            }
+            else {
+                command.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, false)]
+        public virtual int DeleteSelectedItemQuery(int ID) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[2];
+            command.Parameters[0].Value = ((int)(ID));
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
         }
     }
     

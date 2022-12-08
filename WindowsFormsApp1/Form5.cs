@@ -28,5 +28,17 @@ namespace WindowsFormsApp1
             ClientListForm clientList = new ClientListForm();
             clientList.Show();
         }
+
+        private void ManagerSettingsShowtimeButton_Click(object sender, EventArgs e)
+        {
+            ShowTimeListForm showTime = new ShowTimeListForm();
+            showTime.Show();
+        }
+
+        private void ManagerSettingsScreeningRoomsButton_Click(object sender, EventArgs e)
+        {
+            ScreeningRoomListForm screeningRooms = new ScreeningRoomListForm();
+            screeningRooms.Show();
+        }
     }
 }
