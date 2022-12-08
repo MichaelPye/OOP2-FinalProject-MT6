@@ -11,14 +11,25 @@ using WindowsFormsApp1.MTDBTESTDataSetTableAdapters;
 
 namespace WindowsFormsApp1
 {
+    /// <summary>
+    /// This is the class definition that contains the code for the RegisterForm.
+    /// </summary>
     public partial class RegisterForm : Form
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RegisterForm"/> class.
+        /// </summary>
         public RegisterForm()
         {
             InitializeComponent();
         }
 
-        private void userBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        /// <summary>
+        /// This is the method that Initializes the ClientEticketQrCodeForm. 
+        /// </summary>
+        /// <param name="sender">Pressing Button.</param>
+        /// <param name="e">Invalid Input.</param>
+        public void userBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
             this.Validate();
             this.userBindingSource.EndEdit();
@@ -26,14 +37,24 @@ namespace WindowsFormsApp1
 
         }
 
-        private void RegisterForm_Load(object sender, EventArgs e)
+        /// <summary>
+        /// This line of code loads data into the 'mTDBTESTDataSet.User'.
+        /// </summary>
+        /// <param name="sender">Pressing Button.</param>
+        /// <param name="e">Invalid Input.</param>
+        public void RegisterForm_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'mTDBTESTDataSet.User' table. You can move, or remove it, as needed.
+
             this.userTableAdapter1.Fill(this.mTDBTESTDataSet.User);
 
         }
 
-        private void userBindingSource1BindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        /// <summary>
+        /// Creates user biniding source.
+        /// </summary>
+        /// <param name="sender">Pressing Button.</param>
+        /// <param name="e">Invalid Input.</param>
+        public void userBindingSource1BindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
             this.Validate();
             this.userBindingSource1.EndEdit();
@@ -41,21 +62,36 @@ namespace WindowsFormsApp1
 
         }
 
-        private void RegisterForm_Load_1(object sender, EventArgs e)
+        /// <summary>
+        /// This line of code loads data into the 'mTDBTESTDataSet.User'.
+        /// </summary>
+        /// <param name="sender">Pressing Button.</param>
+        /// <param name="e">Invalid Input.</param>
+        public void RegisterForm_Load_1(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'mTDBTESTDataSet.User' table. You can move, or remove it, as needed.
+
             this.userTableAdapter1.Fill(this.mTDBTESTDataSet.User);
 
         }
 
-        private void theRegisterButton_Click(object sender, EventArgs e)
+        /// <summary>
+        /// Registers new user.
+        /// </summary>
+        /// <param name="sender">Pressing Button</param>
+        /// <param name="e">Invalid Input</param>
+        public void theRegisterButton_Click(object sender, EventArgs e)
         {
             this.userTableAdapter1.AddClientQuery(this.theUserTextBox.Text, this.thePasswordTextBox.Text);
             MessageBox.Show("You had been registered!");
             this.Close();
         }
 
-        private void theCancelButton_Click(object sender, EventArgs e)
+        /// <summary>
+        /// Closes the RegisterForm.
+        /// </summary>
+        /// <param name="sender">Pressing Button</param>
+        /// <param name="e">Invalid Input</param>
+        public void theCancelButton_Click(object sender, EventArgs e)
         {
             this.Close();
         }

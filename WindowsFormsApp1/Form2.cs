@@ -10,20 +10,36 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
+    /// <summary>
+    /// This is the class definition that contains the code for the ClientMovieSelectionForm.
+    /// </summary>
     public partial class ClientMovieSelectionForm : Form
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ClientMovieSelectionForm"/> class.
+        /// </summary>
         public ClientMovieSelectionForm()
         {
             InitializeComponent();
         }
 
-        private void ClientMovieSelectionButton_Click(object sender, EventArgs e)
+        /// <summary>
+        /// Click event opens/generates ClientEticketQrCodeForm.
+        /// </summary>
+        /// <param name="sender">Pressing Button.</param>
+        /// <param name="e">Invalid Input.</param>
+        public void ClientMovieSelectionButton_Click(object sender, EventArgs e)
         {
             ClientEticketQrCodeForm frm = new ClientEticketQrCodeForm();
             frm.Show();
         }
 
-        private void ClientMovieSelectionForm_Load(object sender, EventArgs e)
+        /// <summary>
+        /// Connect to MTDB to display Movies and their corresponding info.
+        /// </summary>
+        /// <param name="sender">Pressing Button.</param>
+        /// <param name="e">Invalid Input.</param>
+        public void ClientMovieSelectionForm_Load(object sender, EventArgs e)
         {
              ClientMovieDataDataContext db = new ClientMovieDataDataContext();
 

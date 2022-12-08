@@ -11,14 +11,25 @@ using WindowsFormsApp1.MTDBTESTDataSetTableAdapters;
 
 namespace WindowsFormsApp1
 {
+    /// <summary>
+    /// This is the class definition that contains the code for the ClientLoginForm.
+    /// </summary>
     public partial class ClientLoginForm : Form
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ClientLoginForm"/> class.
+        /// </summary>
         public ClientLoginForm()
         {
             InitializeComponent();
         }
 
-        private void userBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        /// <summary>
+        /// Validates userBindingNavigator.
+        /// </summary>
+        /// <param name="sender">Pressing Button.</param>
+        /// <param name="e">Invalid Input.</param>
+        public void userBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
             this.Validate();
             this.userBindingSource.EndEdit();
@@ -26,14 +37,24 @@ namespace WindowsFormsApp1
 
         }
 
-        private void ClientLoginForm_Load(object sender, EventArgs e)
+        /// <summary>
+        /// This line of code loads data into the 'mTDBTESTDataSet.User' table.
+        /// </summary>
+        /// <param name="sender">Pressing Button.</param>
+        /// <param name="e">Invalid Input.</param>
+        public void ClientLoginForm_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'mTDBTESTDataSet.User' table. You can move, or remove it, as needed.
+
             this.userTableAdapter1.Fill(this.mTDBTESTDataSet.User);
 
         }
 
-        private void userBindingSource1BindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        /// <summary>
+        /// Validates userBindingSource.
+        /// </summary>
+        /// <param name="sender">Pressing Button.</param>
+        /// <param name="e">Invalid Input.</param>
+        public void userBindingSource1BindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
             this.Validate();
             this.userBindingSource1.EndEdit();
@@ -41,14 +62,24 @@ namespace WindowsFormsApp1
 
         }
 
-        private void ClientLoginForm_Load_1(object sender, EventArgs e)
+        /// <summary>
+        /// This line of code loads data into the 'mTDBTESTDataSet.User' table.
+        /// </summary>
+        /// <param name="sender">Pressing Button.</param>
+        /// <param name="e">Invalid Input.</param>
+        public void ClientLoginForm_Load_1(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'mTDBTESTDataSet.User' table. You can move, or remove it, as needed.
+
             this.userTableAdapter1.Fill(this.mTDBTESTDataSet.User);
 
         }
 
-        private void loginButton_Click(object sender, EventArgs e)
+        /// <summary>
+        /// Verfies Login via Database check and refers to correct form based on status.
+        /// </summary>
+        /// <param name="sender">Pressing Button.</param>
+        /// <param name="e">Invalid Input.</param>
+        public void loginButton_Click(object sender, EventArgs e)
         {
             ClientMovieDataDataContext db = new ClientMovieDataDataContext();
 
@@ -74,7 +105,12 @@ namespace WindowsFormsApp1
             }
         }
 
-        private void registerButton_Click(object sender, EventArgs e)
+        /// <summary>
+        /// Opens RegisterForm.
+        /// </summary>
+        /// <param name="sender">Pressing Button.</param>
+        /// <param name="e">Invalid Input.</param>
+        public void registerButton_Click(object sender, EventArgs e)
         {
             RegisterForm registerTime = new RegisterForm();
             registerTime.Show();
